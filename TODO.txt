@@ -1,0 +1,13 @@
+# Framework to do list
+
+TODO: Implements a class/trait dedicated for response-header (in Core\Server\Request)
+    TODO: Implements a response code function
+    TODO: Implements a content-type function
+TODO: Set-up framework logger to follow PHP-PSR
+TODO: Substituate Str class methods in Model class to avoid using customized methods using native methods
+TODO: Enrich Core\Logs and do a complete refactoring of Logger class
+TODO: Create a magicSQL class
+    TODO: Implements magicSQL class in all code of Model class
+TODO: Create a simple "debug" system to execute custom code between three parts of index.php code execution
+TODO: Creates own e-mailer system to invite e-mails
+TODO: Refactor Routes class and optimize it

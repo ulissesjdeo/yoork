@@ -1,0 +1,19 @@
+<form method="post" action="/crud/edit">
+    <input type="hidden" name="operation" value="save-edition">
+    <input type="hidden" name="id" value="<?= $this->view->data['id'] ?>">
+    <div class="mb-5">
+        <label class="w-50">
+            <input class="form-control" name="title" value="<?= $this->view->data['title'] ?>" placeholder="Title">
+        </label>
+    </div>
+    <div class="mb-5">
+        <label class="w-50">
+            <input class="form-control" name="description" value="<?= $this->view->data['description'] ?>" placeholder="Description">
+        </label>
+    </div>
+    <div class="mb-5">
+        <label class="w-50">
+            <button type="submit" class="btn btn-light w-100">Edit</button>
+        </label>
+    </div>
+</form>

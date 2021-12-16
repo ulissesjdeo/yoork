@@ -1,0 +1,11 @@
+# Simple settings that are necessary for routes can work when using Apache (httpd)
+    # Verifying if module is enable
+    <IfModule mod_rewrite.c>
+        # Turning-on rewrite-engine
+        RewriteEngine On
+        # Logic to work using rewrite-conditions and rewrite-rules
+        RewriteCond %{REQUEST_URI}::$1 ^(/.+)/(.*)::\2$
+        RewriteRule ^(.*) - [E=BASE:%1]
+        RewriteCond %{REQUEST_FILENAME} !-f
+        RewriteRule ^ index.php [QSA,L]
+    </IfModule>

@@ -1,0 +1,43 @@
+<style>
+    .no-button {
+        border: 0 solid;
+        background: rgba(0,0,0,0);
+        color: #fff;
+    }
+</style>
+<section class="pb-5 mb-5">
+    <h1>CRUD</h1>
+    <p class='lead'>A simple CRUD for demonstrate framework functionalities</p>
+    <a class="btn btn-secondary mt-3" rel="noopener noreferrer" href="/crud/add">Click me to add a value!</a>
+</section>
+<table class="table text-white">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($this->view->data['values'] as $key => $value) { ?>
+        <tr>
+            <td><?= $value['id'] ?></td>
+            <td><?= $value['title'] ?></td>
+            <td><?= $value['description'] ?></td>
+            <td>
+                <form class="d-inline" method="post" action="/crud/edit">
+                    <input type="hidden" name="operation" value="edit">
+                    <input type="hidden" name="id" value="<?= $value['id'] ?>">
+                    <button type="submit" class="d-inline no-button">Edit</button>
+                </form>
+                |
+                <form class="d-inline" method="post" action="/crud/remove">
+                    <input type="hidden" name="id" value="<?= $value['id'] ?>">
+                    <button type="submit" class="d-inline no-button">Remove</button>
+                </form>
+            </td>
+        </tr>
+        <?php } ?>
+    </tbody>
+</table>
